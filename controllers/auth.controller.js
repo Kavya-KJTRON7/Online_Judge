@@ -50,7 +50,8 @@ export async function register(req, res) {
 
     const accessToken = jwt.sign({
         id: user._id,
-        sessionId: session._id
+        sessionId: session._id,
+        role: user.role 
     }, config.JWT_SECRET, 
 
         {
@@ -119,7 +120,8 @@ export async function login(req, res) {
 
     const accessToken =jwt.sign({
         id: user._id,
-        sessionId: session._id
+        sessionId: session._id,
+        role: user.role
     }, config.JWT_SECRET,
 
         {

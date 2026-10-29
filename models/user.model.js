@@ -16,7 +16,13 @@ const userSchema = new mongoose.Schema({
     password:{
         type: String,
         required:[true,"password is Required"],
-    }
+    },
+
+    role: {
+    type: String,
+    enum: ["student", "admin"],
+    default: "student"  // Everyone starts as a regular student
+}
 })
 
 const userModel = mongoose.model("users", userSchema)
