@@ -4,7 +4,7 @@ A full-stack Online Judge platform built with the **MERN** stack, featuring a se
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 - **Problem Management (CRUD):**
   - Create, view, update, and delete coding problems with difficulty levels (Easy, Medium, Hard), tags, and custom test cases.
@@ -33,7 +33,7 @@ A full-stack Online Judge platform built with the **MERN** stack, featuring a se
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```
 [ React Client (Monaco Editor) ]
@@ -55,7 +55,7 @@ A full-stack Online Judge platform built with the **MERN** stack, featuring a se
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend:** React, Vite, React Router, Axios, `@monaco-editor/react`
 - **Backend:** Node.js, Express.js, Mongoose
@@ -66,7 +66,7 @@ A full-stack Online Judge platform built with the **MERN** stack, featuring a se
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 Algouni_MERN_Proj/
@@ -116,7 +116,7 @@ Algouni_MERN_Proj/
 
 ---
 
-## 🚦 Getting Started
+## Getting Started
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/) (v18+)
@@ -164,7 +164,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ---
 
-## 🔒 API Endpoints
+## API Endpoints
 
 ### Authentication
 - `POST /api/auth/register` — Register a new account
@@ -186,5 +186,5 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ---
 
-## 📜 License
+## License
 This project is open-source and available under the [ISC License](LICENSE).
