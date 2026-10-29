@@ -14,18 +14,25 @@ export default function Navbar() {
   return (
     <nav style={styles.nav}>
       <div style={styles.left}>
-        <Link to="/" style={styles.brand}>AlgoUni OJ</Link>
-        <Link to="/" style={styles.link}>Problems</Link>
+        <Link to="/" style={styles.brand}>
+          <span style={styles.brandIcon}>⚡</span>
+          <span>AlgoUni<span style={{ color: "#ffa116" }}>OJ</span></span>
+        </Link>
+        <Link to="/" style={styles.navLink}>Problems</Link>
       </div>
 
       <div style={styles.right}>
         {user ? (
           <div style={styles.userBox}>
-            <span style={styles.username}>👤 {user.username}</span>
+            <div style={styles.avatar}>
+              {user.username ? user.username[0].toUpperCase() : "U"}
+            </div>
+            <span style={styles.username}>{user.username}</span>
+            <span style={styles.roleBadge}>{user.role || "student"}</span>
             <button onClick={handleLogout} style={styles.logoutBtn}>Logout</button>
           </div>
         ) : (
-          <Link to="/login" style={styles.loginBtn}>Login / Register</Link>
+          <Link to="/login" style={styles.loginBtn}>Sign In</Link>
         )}
       </div>
     </nav>
@@ -37,34 +44,79 @@ const styles = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: "14px 28px",
-    backgroundColor: "#1e1e1e",
-    color: "#fff",
-    borderBottom: "1px solid #333",
-    fontFamily: "system-ui, -apple-system, sans-serif"
+    padding: "0 28px",
+    height: "56px",
+    backgroundColor: "#181818",
+    borderBottom: "1px solid #282828",
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
   },
-  left: { display: "flex", gap: "24px", alignItems: "center" },
-  brand: { fontSize: "20px", fontWeight: "bold", color: "#ffa116", textDecoration: "none" },
-  link: { color: "#ccc", textDecoration: "none", fontSize: "15px" },
+  left: { display: "flex", gap: "28px", alignItems: "center" },
+  brand: {
+    display: "flex",
+    alignItems: "center",
+    gap: "8px",
+    fontSize: "19px",
+    fontWeight: "700",
+    color: "#ffffff",
+    textDecoration: "none",
+    letterSpacing: "-0.5px"
+  },
+  brandIcon: {
+    backgroundColor: "#ffa11622",
+    color: "#ffa116",
+    padding: "4px 8px",
+    borderRadius: "6px",
+    fontSize: "14px"
+  },
+  navLink: {
+    color: "#a0a0a0",
+    textDecoration: "none",
+    fontSize: "14px",
+    fontWeight: "500",
+    transition: "color 0.2s ease"
+  },
   right: { display: "flex", alignItems: "center" },
-  userBox: { display: "flex", gap: "14px", alignItems: "center" },
-  username: { color: "#eee", fontSize: "14px", fontWeight: "500" },
+  userBox: { display: "flex", gap: "12px", alignItems: "center" },
+  avatar: {
+    width: "30px",
+    height: "30px",
+    borderRadius: "50%",
+    backgroundColor: "#ffa116",
+    color: "#181818",
+    fontWeight: "700",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "14px"
+  },
+  username: { color: "#e0e0e0", fontSize: "14px", fontWeight: "500" },
+  roleBadge: {
+    fontSize: "11px",
+    textTransform: "uppercase",
+    padding: "2px 6px",
+    borderRadius: "4px",
+    backgroundColor: "#282828",
+    color: "#888",
+    fontWeight: "600"
+  },
   logoutBtn: {
     padding: "6px 12px",
-    backgroundColor: "#d9534f",
-    color: "#fff",
-    border: "none",
-    borderRadius: "4px",
+    backgroundColor: "transparent",
+    color: "#ff5252",
+    border: "1px solid #ff525244",
+    borderRadius: "6px",
     cursor: "pointer",
-    fontSize: "13px"
+    fontSize: "12px",
+    fontWeight: "500",
+    marginLeft: "4px"
   },
   loginBtn: {
-    padding: "6px 14px",
+    padding: "7px 16px",
     backgroundColor: "#ffa116",
-    color: "#000",
+    color: "#181818",
     textDecoration: "none",
-    borderRadius: "4px",
-    fontWeight: "bold",
-    fontSize: "14px"
+    borderRadius: "6px",
+    fontWeight: "600",
+    fontSize: "13px"
   }
 };
