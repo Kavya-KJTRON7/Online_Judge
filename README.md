@@ -188,3 +188,4 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ## License
 This project is open-source and available under the [ISC License](LICENSE).
+
